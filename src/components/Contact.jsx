@@ -70,9 +70,10 @@ const Contact = () => {
         <div className="contact-box">
           <h2>Let's Work Together</h2>
           <p className="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
-            voluptatem illo magnam similique velit at mollitia corporis quaerat
-            eaque asperiores.
+            I'm always excited to collaborate on new projects, solve complex
+            problems, and bring creative ideas to life. Whether you have a job
+            opportunity, a project in mind, or just want to connect, feel free
+            to reach out!
           </p>
 
           {/* Map over the contact details array */}
