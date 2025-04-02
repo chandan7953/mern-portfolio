@@ -1,23 +1,49 @@
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
+  const formRef = useRef();
+  const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // EmailJS Configuration (Replace with your actual credentials)
+  const EMAILJS_SERVICE_ID = "service_pqa918b";
+  const EMAILJS_TEMPLATE_ID = "template_ed9u02r";
+  const EMAILJS_PUBLIC_KEY = "ykLknzamqHScXNhqQ";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData); // Replace with form submission logic (e.g., API call)
+
+    // Manually create the payload from the form data
+    const formData = {
+      name: formRef.current.name.value,
+      email: formRef.current.email.value,
+      phone: formRef.current.phone.value,
+      subject: formRef.current.subject.value,
+      message: formRef.current.message.value,
+    };
+
+    // Send email using send() method
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formData, // Passing the data as an object
+        EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log("Email Sent:", result.text);
+          setStatus("Your message has been sent successfully!");
+          formRef.current.reset(); // Reset form after submission
+        },
+        (error) => {
+          console.log("Error sending email:", error);
+          setStatus(
+            `Failed to send message. Please try again. Error: ${error.text}`
+          );
+        }
+      );
   };
 
   // Contact details array to avoid repetition
@@ -63,50 +89,35 @@ const Contact = () => {
         </div>
 
         <div className="contact-box">
-          <form onSubmit={handleSubmit}>
+          <form ref={formRef} onSubmit={handleSubmit}>
             <h2 className="heading">
               Contact <span>Me!</span>
             </h2>
 
             <div className="field-box">
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-              />
+              <input type="text" name="name" placeholder="Full Name" required />
               <input
                 type="email"
                 name="email"
                 placeholder="Email Address"
                 required
-                value={formData.email}
-                onChange={handleChange}
               />
               <input
                 type="text"
                 name="phone"
                 placeholder="Phone Number"
                 required
-                value={formData.phone}
-                onChange={handleChange}
               />
               <input
                 type="text"
                 name="subject"
                 placeholder="Email Subject"
                 required
-                value={formData.subject}
-                onChange={handleChange}
               />
               <textarea
                 name="message"
                 placeholder="Your Message"
                 required
-                value={formData.message}
-                onChange={handleChange}
               ></textarea>
             </div>
 
@@ -114,6 +125,8 @@ const Contact = () => {
               Send Message
             </button>
           </form>
+
+          {status && <p className="status-message">{status}</p>}
         </div>
       </div>
     </section>
