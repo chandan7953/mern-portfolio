@@ -63,7 +63,7 @@ const Navbar = () => {
           Resume
         </Link>
         <Link
-          to="portfolio"
+          to="projects"
           smooth={true}
           duration={500}
           className="nav-link"
