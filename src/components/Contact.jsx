@@ -6,10 +6,9 @@ const Contact = () => {
   const formRef = useRef();
   const [status, setStatus] = useState("");
 
-  // EmailJS Configuration (Replace with your actual credentials)
-  const EMAILJS_SERVICE_ID = "service_pqa918b";
-  const EMAILJS_TEMPLATE_ID = "template_ed9u02r";
-  const EMAILJS_PUBLIC_KEY = "ykLknzamqHScXNhqQ";
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleSubmit = (e) => {
     e.preventDefault();
