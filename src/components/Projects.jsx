@@ -21,7 +21,7 @@ const projects = [
     image: financeTracker,
     techStack: "React, Firebase, Ant Design",
     github: "https://github.com/chandan7953/personal-finance-tracker",
-    live: "https://personal-finance-tracker7953.netlify.app/dashboard",
+    live: "https://personal-finance-tracker7953.netlify.app/",
   },
   {
     title: "Podcast Platform",
