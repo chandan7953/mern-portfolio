@@ -11,8 +11,8 @@ const projects = [
       "Responsive chat app with real-time messaging, secure auth, and a sleek UI built using Socket.io and MongoDB.",
     image: chatAppImage,
     techStack: "MERN Stack, Socket.io",
-    github: "https://github.com/yourusername/chat-app",
-    live: "https://yourchatapp.com",
+    github: "https://github.com/chandan7953/real-chat-app",
+    live: "https://real-chat-app7953.netlify.app/",
   },
   {
     title: "Finance Tracker App",
@@ -20,8 +20,8 @@ const projects = [
       "Track income and expenses with login via email or Google. Features charts, Firebase backend, and PapaParse.",
     image: financeTracker,
     techStack: "React, Firebase, Ant Design",
-    github: "https://github.com/yourusername/finance-tracker",
-    live: "https://yourfinancetracker.com",
+    github: "https://github.com/chandan7953/personal-finance-tracker",
+    live: "https://personal-finance-tracker7953.netlify.app/dashboard",
   },
   {
     title: "Podcast Platform",
@@ -29,8 +29,8 @@ const projects = [
       "Podcast platform with Firebase auth, banner uploads, and audio player with full playback controls.",
     image: podcast,
     techStack: "React, React-Redux, Firebase",
-    github: "https://github.com/yourusername/podcast-platform",
-    live: "https://yourpodcast.com",
+    github: "https://github.com/chandan7953/Podcast",
+    live: "https://podcast7953.netlify.app/",
   },
 ];
 
