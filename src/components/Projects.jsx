@@ -1,34 +1,36 @@
 import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import projectImg from "../assets/project.webp";
+import chatAppImage from "../assets/chat-app.png";
+import financeTracker from "../assets/financetracker.png";
+import podcast from "../assets/podcast.png";
 
 const projects = [
   {
-    title: "Portfolio Website",
+    title: "Real-time Chat App",
     description:
-      "A personal portfolio showcasing my skills, projects, and experience.",
-    image: projectImg, // Replace with your image path
-    techStack: "React, Tailwind, Vite",
-    github: "https://github.com/yourusername/portfolio",
-    live: "https://yourportfolio.com",
+      "Responsive chat app with real-time messaging, secure auth, and a sleek UI built using Socket.io and MongoDB.",
+    image: chatAppImage,
+    techStack: "MERN Stack, Socket.io",
+    github: "https://github.com/yourusername/chat-app",
+    live: "https://yourchatapp.com",
   },
   {
-    title: "E-Commerce Store",
+    title: "Finance Tracker App",
     description:
-      "A fully functional e-commerce platform with user authentication and payment integration.",
-    image: projectImg, // Replace with your image path
-    techStack: "React, Node.js, Express, MongoDB",
-    github: "https://github.com/yourusername/ecommerce-store",
-    live: "https://yourecommerce.com",
+      "Track income and expenses with login via email or Google. Features charts, Firebase backend, and PapaParse.",
+    image: financeTracker,
+    techStack: "React, Firebase, Ant Design",
+    github: "https://github.com/yourusername/finance-tracker",
+    live: "https://yourfinancetracker.com",
   },
   {
-    title: "Blog App",
+    title: "Podcast Platform",
     description:
-      "A full-stack blog application where users can create, read, update, and delete posts.",
-    image: projectImg, // Replace with your image path
-    techStack: "Next.js, Prisma, PostgreSQL",
-    github: "https://github.com/yourusername/blog-app",
-    live: "https://yourblog.com",
+      "Podcast platform with Firebase auth, banner uploads, and audio player with full playback controls.",
+    image: podcast,
+    techStack: "React, React-Redux, Firebase",
+    github: "https://github.com/yourusername/podcast-platform",
+    live: "https://yourpodcast.com",
   },
 ];
 

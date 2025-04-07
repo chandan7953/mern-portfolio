@@ -19,7 +19,7 @@ import {
 } from "react-icons/si";
 
 const Resume = () => {
-  const [activeSection, setActiveSection] = useState("experience");
+  const [activeSection, setActiveSection] = useState("skills");
 
   // Resume Sections Data
   const resumeData = {
@@ -116,9 +116,9 @@ const Resume = () => {
   ];
 
   const sections = [
+    { key: "skills", label: "Skills" },
     { key: "experience", label: "Experience" },
     { key: "education", label: "Education" },
-    { key: "skills", label: "Skills" },
     { key: "about", label: "About Me" },
   ];
 
